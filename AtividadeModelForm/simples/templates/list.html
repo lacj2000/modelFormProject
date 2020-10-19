@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Products
+{% endblock %}
+
+{% block body%}
+    {% if products %}
+        {% for product in products %}
+            <h3>Produto: {{product.name}}</h3>
+            <h4>Valor: {{product.price}} R$</h4>
+            <p>Disponível: {{product.quantity}}</p>
+            <p>Descrição: {{product.description}}</p>
+        {% endfor %}
+    {% else %}
+        <p>Não há produtos...</p>
+    {% endif %}
+{% endblock %}

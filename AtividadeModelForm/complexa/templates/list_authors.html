@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Autores
+{% endblock %}
+
+{% block body%}
+    {% if authors %}
+        {% for author in authors %}
+            <h3>Autor: {{author.name}}</h3>
+            
+        {% endfor %}
+    {% else %}
+        <p>Não há autores</p>
+    {% endif %}
+{% endblock %}

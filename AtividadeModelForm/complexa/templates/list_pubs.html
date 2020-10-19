@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Editoras
+{% endblock %}
+
+{% block body%}
+    {% if pub_companys %}
+        {% for pub_company in pub_companys %}
+            <h3>Editora: {{pub_company.name}}</h3>
+            
+        {% endfor %}
+    {% else %}
+        <p>Não há Editoras...</p>
+    {% endif %}
+{% endblock %}

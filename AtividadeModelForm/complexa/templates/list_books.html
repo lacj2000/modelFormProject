@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Books
+{% endblock %}
+
+{% block body%}
+    {% if books %}
+        {% for book in books %}
+            <h3>Produto: {{book.name}}</h3>
+            <p>Autores: 
+                {% for author in book.authors.all %}
+                    {{author.name}} 
+                {% endfor %}
+            </p>
+            <p>Editora: {{ book.pub_company.name }}</p>
+        {% endfor %}
+    {% else %}
+        <p>Não há livros...</p>
+    {% endif %}
+{% endblock %}
